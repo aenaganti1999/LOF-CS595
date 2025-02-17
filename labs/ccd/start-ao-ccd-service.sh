@@ -13,7 +13,7 @@ docker run -d \
 	-e POSTGRES_USER=postgres \
 	-e POSTGRES_PASSWORD=admin123 \
 	-e POSTGRES_HOST_AUTH_METHOD=trust \
-	postgres:16
+    postgres:16
 
 #Run HAPI-FHIR
 echo ""
@@ -38,8 +38,8 @@ docker run -d \
 	--platform linux/amd64 \
 	--network=bridge \
 	--name aoservice \
-    -e lof_service_client_id="" \
-    -e lof_service_client_secret="" \
+    -e lof_service_client_id="tB_HMJrKMzt0Igm7evwVZOh7rnn8znOkYCTky51zeb0" \
+    -e lof_service_client_secret="ctudh1I1nGu6pDfHuVGqXe08abF7xtnjuMfsit1twVcTmzSjhyR7F4wd-YiCmmcA" \
     -e POSTGRES_HOST="172.17.0.1" \
     -e POSTGRES_PORT="5432" \
     -e POSTGRES_DB="aodb" \
@@ -61,8 +61,8 @@ docker run -d \
 	--platform linux/amd64 \
 	--network=bridge \
 	--name ccdservice \
-	-e client_id="" \
-	-e client_secret="" \
+	-e client_id="tB_HMJrKMzt0Igm7evwVZOh7rnn8znOkYCTky51zeb0" \
+	-e client_secret="ctudh1I1nGu6pDfHuVGqXe08abF7xtnjuMfsit1twVcTmzSjhyR7F4wd-YiCmmcA" \
 	-e BASE_URL=http://127.0.0.1:8000/api/ \
 	-p 4200:80 \
 	rcpu/lof-services:ccdservice
